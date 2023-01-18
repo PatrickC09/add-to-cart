@@ -1,1 +1,63 @@
-<p>cart works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ng-container *ngIf="true">
+        <div class="container">
+            <div class="card-table">
+                <div class="card-product">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Sr. No</th>
+                                <th>Nombre del Producto</th>
+                                <th>Imagen del Producto </th>
+                                <th>Descripcion</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of products; let i = index">
+                                <td>{{i+1}}</td>
+                                <td>{{item.title}}</td>
+                                <td>
+                                    <img style="width: 120px" src="{{item.image}}" alt="">
+                                </td>
+                                <td>{{item.description}}</td>
+                                <td>{{item.price}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td>{{item.total}}</td>
+                                <td>
+                                    <button (click)="removeItem(item)" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="false"> 
+        <div class="container">
+            <div class="card">
+                <h5 class="card-title"> Mi Carrito </h5>
+            </div>
+            <div class="center">
+                <img src="https://thumbs.dreamstime.com/b/entrega-de-la-tienda-en-l%C3%ADnea-el-env%C3%ADo-compra-venta-al-por-menor-web-mercanc%C3%ADas-comercializa-vector-y-que-hace-compras-del-136501850.jpg" alt="">
+                <h4>Tu carrito esta vacio!</h4>
+                <h6>Agregar al carrito ahora</h6>
+                <button class="btn btn-primary"> Comprar ahora </button>
+            </div>
+        </div>
+    </ng-container>
+</body>
+</html>

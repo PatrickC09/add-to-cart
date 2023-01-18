@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/estilos.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -65,10 +66,34 @@
                 <p style="white-space: nowrap; overflow:hidden; text-overflow:ellipsis;max-width: 100ch;">
                     {{item.description}}</p>
                 <p> <strong>Precio:</strong>${{item.price}}</p>
-                <button class="btn btn-primary"> Agregar al Carrito </button>
+
+                <div id="liveAlertPlaceholder"></div>
+                <button class="btn btn-primary" id="liveAlertBtn" (click)=addtocart(item)> Agregar al Carrito </button>
+                
+                
+                    
             </div>
         </ng-container>
         </div>
     </div>
+
+
+<script>
+var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+var alertTrigger = document.getElementById('liveAlertBtn')
+
+function alert(message, type) {
+  var wrapper = document.createElement('div')
+  wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+  alertPlaceholder.append(wrapper)
+}
+
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', function () {
+    alert('Genial, activaste este mensaje de alerta.', 'success')
+  })
+}  
+</script> 
 </body>
 </html>
