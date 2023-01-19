@@ -14,7 +14,7 @@
                 </i>
                 <strong style="font-size: 32px;">One Cell</strong>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Buscar Producto">
+                    <input type="text" class="form-control" ([ngModel])="searchTerm" (keyup)="search($event)" placeholder="Buscar Producto">
                 </div>
                 <span class="fas fa-search search-icon"></span>
             </div>

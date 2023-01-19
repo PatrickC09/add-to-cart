@@ -8,6 +8,7 @@ export class CartService {
 
   public cartItemList: any = []
   public productlist =  new BehaviorSubject<any>([]);
+  public search = new BehaviorSubject<string>("");
 
   constructor() { }
   getProducts(){
@@ -38,6 +39,7 @@ export class CartService {
         this.cartItemList.splice(index,1);
       }
     })
+    this.productlist.next(this.cartItemList);
   }
   removeAllCart(){
     this.cartItemList= [];
