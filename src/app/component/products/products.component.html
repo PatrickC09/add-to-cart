@@ -10,43 +10,43 @@
     <div class="card-top container-fluid">
         <div class="container d-flex">
             <div class="item">
-                <a>
+                <a (click)="filter('')" >
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhaOeDaV2QPQL69JAHszFJoj3esSkfEFQ9cfAdWc8tfkTirEAb2UX0aOl1cFR2C1eY5zA&usqp=CAU" alt="">
                     <h6>Todos las Marcas</h6>
                 </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('samsung')">
                     <img src="data:image/png;base64,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" alt="">
                     <h6>Samsung</h6>
                 </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('xiaomi')">
                     <img src="https://brandemia.org/sites/default/files/inline/images/02-xiaomi-imagenes-brandemia-blog.jpg" alt="">
                     <h6>Xiaomi</h6>
                 </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('apple')">
                     <img src="https://www.adlatina.com/uploads/img/glo.logo_apple570_13.jpg" alt="">
                     <h6>Apple</h6>
                 </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('realme')">
                     <img src="https://i.blogs.es/84b194/realme/1366_2000.jpg" alt="">
                     <h6>Realme</h6>
                 </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('huawei')">
                     <img src="https://depor.com/resizer/RkDpGmc9xJ9q4Rjsan5GIy9OyJk=/620x0/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/UXBXL2KZ6FBXZBPD4GXMJM53DA.jpg" alt="">
                     <h6>Huawei</h6>
                 </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('tecno')">
                     <img style="width: 75px; margin-top: 5px" src="https://phonesdata.com/files/brands/tecno-logo.jpg" alt="">
                     <h6>Tecno</h6>
                 </a>
@@ -57,7 +57,7 @@
 
     <div class="container">
         <div class="row"> 
-            <ng-container *ngFor="let item of productList | filter: searchKey:'title' ">
+            <ng-container *ngFor="let item of filterCategory | filter: searchKey:'title' ">
             <div class="card col-md-3">
                 <img src="{{item.image}}" alt="">
                 <h5 style="white-space: nowrap; overflow:hidden; text-overflow:ellipsis;max-width: 100ch;">
@@ -65,9 +65,26 @@
                 <p style="white-space: nowrap; overflow:hidden; text-overflow:ellipsis;max-width: 100ch;">
                     {{item.description}}</p>
                 <p> <strong>Precio:</strong>${{item.price}}</p>
-                <button class="btn btn-primary" id="liveAlertBtn" (click)=addtocart(item)> Agregar al Carrito </button>
-                
-                
+                <div id="liveAlertPlaceholder"></div>
+                <button type="button" class="btn btn-primary" id="liveAlertBtn" (click)=addtocart(item)> Agregar al Carrito </button>
+            
+                <script>
+                    var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+var alertTrigger = document.getElementById('liveAlertBtn')
+
+function alert(message, type) {
+  var wrapper = document.createElement('div')
+  wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+  alertPlaceholder.append(wrapper)
+}
+
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', function () {
+    alert('Genial, activaste este mensaje de alerta.', 'success')
+  })
+}
+                </script>
                     
             </div>
         </ng-container>
